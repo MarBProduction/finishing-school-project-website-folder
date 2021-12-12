@@ -1,0 +1,366 @@
+/* ---------- root variables ---------- */
+:root {
+  --background: #0C171C;
+  --white: #fff;
+  --white-alpha1: rgba(255, 255, 255, 0.5);
+  --dark-blue: #143755;
+  --light-blue: #2E638F;
+  --turquoise-blue: #22768E;
+  --out-of-bound-color: #121e27;
+}
+
+/* ---------- general styling ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: var(--out-of-bound-color);
+  color: var(--white);
+}
+
+body {
+  line-height: normal;
+}
+
+#out-of-bound-background {
+  position: fixed;
+  z-index: -100;
+}
+#out-of-bound-flex {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#out-of-bound-flex img {
+  width: 15%;
+}
+
+#wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--background);
+}
+
+#information-page {
+  position: relative;
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#info-below {
+  display: block;
+  width: 70px;
+  position: absolute;
+  left: 40px;
+  top: 76vh;
+}
+#info-below img {
+  width: 100%;
+}
+
+#topbar {
+  display: flex;
+}
+
+#logo {
+  flex: 0 0 150px;
+  padding: 1em;
+  text-align: center;
+}
+#logo img {
+  width: 100%;
+  max-width: 80px;
+}
+
+#right-topbar {
+  flex: 1 1 100%;
+}
+
+#searchbar {
+  display: flex;
+  padding: 0.8em;
+  align-items: center;
+}
+#search-icon {
+  width: 50px;
+  height: 100%;
+  margin-right: 1.5em;
+}
+#searchbar input[type=search] {
+  background-color: transparent;
+  border: solid 16px var(--white);
+  border-image-source: url(../img/form-border-white.svg);
+  border-image-slice: 28;
+  border-image-repeat: stretch;
+  color: var(--white);
+  width: 100%;
+  max-width: 500px;
+  font-size: 1em;
+}
+#searchbar input[type=search]::placeholder {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+#top-name {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 8px;
+}
+
+#sidebar-map-flex {
+  display: flex;
+}
+
+#sidebar-gradient {
+  flex: 0 0 150px;
+  background-image: linear-gradient(180deg, var(--background), var(--dark-blue));
+}
+
+#right-of-sidebar-gradient {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#interactive-map-container {
+  position: relative;
+  align-self: center;
+}
+#missing-map {
+  font-size: 2em;
+  border: solid 3px var(--white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#interactive-map-container img {
+  height: 70vh;
+}
+#interactive-map-container a {
+  font-size: 1.2em;
+  position: absolute;
+}
+#interactive-map-container a:hover {
+  background-color: var(--white-alpha1);
+}
+
+#breadcrumbs {
+  font-size: 1.4em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+#breadcrumbs a:hover {
+  background-color: var(--white-alpha1);
+}
+#breadcrumbs img {
+  max-width: 25px;
+  margin: 0 1em;
+}
+#last-breadcrumb {
+  text-decoration: none;
+  cursor: default;
+}
+#breadcrumbs #last-breadcrumb:hover {
+  background-color: transparent;
+}
+
+#map-to-chapter-border {
+  width: 100%;
+  max-width: 700px;
+  margin-left: -130px;
+  margin-bottom: 1em;
+}
+
+#chapter-flex {
+  display: flex;
+}
+
+#chapter-menu {
+  background-color: var(--dark-blue);
+  width: 200px;
+  flex: 0 0 150px;
+}
+#chapter-menu a {
+  font-size: 1.2em;
+  padding: 1em;
+  display: block;
+}
+#chapter-menu a:hover {
+  background-color: var(--turquoise-blue);
+}
+.chapter-menu-active {
+  background-color: var(--turquoise-blue);
+  text-decoration: none;
+}
+
+.line-container {
+  display: flex;
+}
+.dot1 {
+  background-color: var(--light-blue);
+  flex: 0 0 5px;
+  height: 5px;
+  border-radius: 5px;
+}
+.dot2 {
+  background-color: var(--light-blue);
+  flex: 0 0 10px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+.line {
+  background-color: var(--light-blue);
+  flex: 1 1 100%;
+  height: 5px;
+  border-radius: 5px;
+}
+
+#chapter-container {
+  padding: 3em;
+  padding-top: 0;
+  width: 100%;
+}
+#bottom-name {
+  font-size: 2em;
+  font-weight: bold;
+  margin: -0.5em auto 1em auto;
+  max-width: 800px;
+}
+#chapter-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+#development-notes {
+  margin: 5em 0;
+  padding: 0 1em;
+  background-color: var(--dark-blue);
+  border: solid 20px var(--white);
+  border-image-source: url(../img/form-border-white.svg);
+  border-image-slice: 28;
+  border-image-repeat: stretch;
+
+}
+#development-notes ul {
+  list-style: disc outside;
+}
+.development-note-flex {
+  display: flex;
+  margin: 1.5em 0;
+}
+.development-note-date {
+  margin-right: 1.5em;
+}
+
+
+
+/* ---------- animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- loader styling ---------- */
+
+#loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  overflow: hidden;
+  text-align: center;
+}
+
+.spinner {
+  border: 5px solid var(--white);
+  border-radius: 50%;
+  border-top: 5px solid var(--white-alpha1);
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite;
+  /* Safari */
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+
+
+/* ---------- media query ---------- */
+
+/* Only change the scrollbar styling for desktop browsers*/
+/*
+@media (any-hover: hover) {
+  /*Scrollbar styling for Firefox*/
+  /*#preview-container, 
+  #category-buttons {
+    scrollbar-width: thin;
+    scrollbar-color: var(--white-alpha1) rgba(255, 255, 255, 0);
+  }
+
+  /*Scrollbar styling for Edge, Chrome and Safari*/
+  /*#game-page ::-webkit-scrollbar {
+    height: 10px;
+  }
+  #game-page ::-webkit-scrollbar-track {
+    background: unset;
+  }
+  #game-page ::-webkit-scrollbar-thumb {
+    background: var(--white-alpha1);
+    border-radius: 20px;
+  }
+}
+*/
+
+/*
+@media only screen and (min-width: 500px) {
+  
+}
+*/

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Interactive map</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="This is a protoype of an interactive map to a game world. Everything is placeholders.">
+  <meta name="author" content="Martin Boesen">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> -->
+</head>
+
+
+<!-- onhashchange="pageChange()" -->
+<body >
+  <div id="out-of-bound-background">
+    <div id="out-of-bound-flex">
+      <img src="img/pillar-left.png" alt="">
+      <img src="img/pillar-right.png" alt="">
+    </div>
+  </div>
+  <div id="wrapper">
+    <!-- Pages -->
+    <!-- Information page -->
+    <article id="information-page" class="page">
+      <a id="info-below" href="#map-to-chapter-border">
+        <img src="img/info-below-icon.svg" alt="Click to jump to info">
+      </a>
+      <div id="topbar">
+        <div id="logo">
+          <img src="img/placeholder-logo.png" alt="Placeholder logo">
+        </div>
+        <div id="right-topbar">
+          <div id="searchbar">
+            <img id="search-icon" src="img/search-icon.svg" alt="Search">
+            <!-- onkeyup="search(this.value)" -->
+            <input id="search-field" type="search" placeholder="Search for a destination" >
+          </div>
+          <h1 id="top-name"></h1>
+        </div>
+      </div>
+      <div id="sidebar-map-flex">
+        <div id="sidebar-gradient"></div>
+        <div id="right-of-sidebar-gradient">
+          <nav id="interactive-map-container"></nav>
+          <div id="breadcrumbs"></div>
+          <img id="map-to-chapter-border" src="img/mapsections-divider.png" alt="">
+        </div>
+      </div>
+      <div id="chapter-flex">
+        <nav id="chapter-menu"></nav>  
+        <div id="chapter-container">
+          <h2 id="bottom-name"></h2>  
+          <div id="chapter-text"></div>
+        </div>
+      </div>
+    </article>
+    <!-- Pages end -->
+    
+    <!-- loader  -->
+    <div id="loader">
+      <div class="spinner"></div>
+    </div>
+    
+    <!-- main js file -->
+    <script src="js/main.js"></script>
+  </div>
+</body>
+
+</html>
